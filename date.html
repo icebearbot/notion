@@ -6,20 +6,10 @@
     <style>
 #lbl {
     font-family: "Trebuchet MS", monospace;
-    /*font-size: large; */
     font-weight: bold;
     color: #e1e1e1;
-    /*padding: 3px; */
-    /*border: 1px solid #ececec;*/
-    /*text-align: center;*/
     letter-spacing: 2px;
-    /*line-height: 1.5;*/
-    /*height:85%*/
 }
-
-/*#date{
-    font-size:large;
-}*/
 
 body{
     background-color: #191919;
@@ -62,20 +52,11 @@ body{
     // var hrs = today.getHours();
     var dayOfWeek = weekday[today.getDay()];
     var monthOfYear = month[today.getMonth()]
-    var date = dayOfWeek+ " &nbsp" + today.getDate() + " " + monthOfYear;
+    var date = dayOfWeek+ ", " + today.getDate() + " " + monthOfYear;
 
-    // var greet;
-
-    // if (hrs < 12)
-    //     greet = 'Good Morning  ';
-    // else if (hrs >= 12 && hrs <= 17)
-    //     greet = 'Good Afternoon ';
-    // else if (hrs >= 17 && hrs <= 24)
-    //     greet = 'Good Evening  ';
 
     document.getElementById('lbl').innerHTML =
-        // greet+=`<div id="date"> ${date}</div>`;
-        "Tasks for Today &nbsp;&nbsp;&nbsp" + date;
+        "Tasks for Today &nbsp[ " + date + " ]";
 
 </script>
 
