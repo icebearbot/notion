@@ -1,16 +1,21 @@
 <html> 
 <!-- https://blog.shorouk.dev/2020/06/how-to-embed-any-number-of-html-widgets-snippets-into-notion-app-for-free/ -->
-
+    
 
 <head>
     <title>Day & Date</title> 
     <style>
-#lbl {
+#title {
     font-family: "Trebuchet MS", monospace;
     font-weight: bold;
     color: #e1e1e1;
     letter-spacing: 2px;
+    padding: 5px;
+    border-bottom: solid;
+    border-width: 1.5px;
+    border-color:  #373737;
 }
+
 
 body{
     background-color: #191919;
@@ -20,10 +25,15 @@ body{
 
 
 <body>
-    <div id="lbl"></div>
+    <div id="title"></div>
+    <div id="time"></div>
 </body>
 
 <script>
+
+    var today = new Date();
+
+    // set arrays to name dates
     var weekday = new Array(7);
     weekday[0] = "Sunday";
     weekday[1] = "Monday";
@@ -32,7 +42,6 @@ body{
     weekday[4] = "Thursday";
     weekday[5] = "Friday";
     weekday[6] = "Saturday";
-
 
     var month = new Array(12);
     month[0] = "January";
@@ -48,16 +57,14 @@ body{
     month[10] = "November";
     month[11] = "December";
 
-    
-    var today = new Date();
-    // var hrs = today.getHours();
+    // set date
     var dayOfWeek = weekday[today.getDay()];
     var monthOfYear = month[today.getMonth()]
     var date = dayOfWeek+ ", " + today.getDate() + " " + monthOfYear;
 
-
-    document.getElementById('lbl').innerHTML =
+    document.getElementById('title').innerHTML =
         "Tasks for Today &nbsp[ " + date + " ]";
+
 
 </script>
 
